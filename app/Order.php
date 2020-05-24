@@ -9,4 +9,9 @@ class Order extends Model
 {
     use SoftDeletes;
     protected $guarded = ['id']; 
+
+    public function pizzas()
+    {
+        return $this->belongsToMany('App\Pizza')->withPivot(['quantity']);;
+    }
 }

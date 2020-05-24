@@ -15,9 +15,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->json('pizza_details');
             $table->string('orderId');
-
+            $table->string('status');
             $table->text('notes')->nullable();
 
             $table->unsignedBigInteger('customer_id');
